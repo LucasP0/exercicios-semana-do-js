@@ -9,6 +9,8 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+const impar = randomNumbers.filter(index => index % 2 !=0 );
+console.log(impar);
 /*
   02
 
@@ -16,6 +18,11 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+const newCrazeyNumbers = crazyNumbers.reduce((acumulador, crazyNumbers) => {
+  return crazyNumbers < 501 ? acumulador + 1 : acumulador
+}, 0)
+console.log(newCrazeyNumbers);
+
 
 /*
   03
@@ -27,6 +34,9 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+const doubleNumbers = numbers.map(number => number ** 2)
+
+console.log(doubleNumbers);
 
 /*
   04
@@ -48,7 +58,9 @@ const tarantinoMovies = [
   { name: 'À Prova de Morte', release: 2007 },
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
-
+const newMovies = tarantinoMovies.filter(filmes => filmes.release < 2000 
+);
+console.log(newMovies);
 /*
   05
 
@@ -66,6 +78,9 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
+const newShows = tvShows.map(({ name }) => name
+);
+console.log(newShows)
 /*
   06
 
@@ -85,10 +100,17 @@ const cart = [
   { name: 'Death Stranding', price: 149.99 }
 ]
 
+const productList = cart.reduce((accumulator, product) => {
+  return `${accumulator} ${product.name} \n`
+}, '')
+console.log(productList)
 /*
 - Nome 1
 - Nome 2
 - Nome 3
+
+
+
 
 Obs: 👆🏻 o objetivo do exercício é gerar a string acima. 
 
